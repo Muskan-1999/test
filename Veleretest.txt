@@ -1,0 +1,80 @@
+Write an SQL Query to Find an EMPLOYEE NAME who is getting 3rd highest SALARY from Organisation.
++-------+-----+
+| ENAME | SAL |
++-------+-----+
+| A     | 100 |
+| B     | 300 |
+| C     | 200 |
+| D     | 500 |
+| F     | 400 |
+| G     | 600 |
+| H     | 700 |
+| I     | 800 |
++-------+-----+
+
+Answer : Select  * from employee grup by sal order by (sal) desc limit 2,1;
+
+Or else
+
+Select * from employee group by salary order by (salary) desc limit 1 offset 2;
+
+2. Sort a list of integers in descending order Without using a predefined function.
+li = [10,1,9,2,8,3,7,4,6,5]
+
+Answer:
+<?php
+
+$li=[10,1,9,2,8,3,7,4,6,5];
+$len=count($li);
+for($i=0;$i<$len-1;$i++){
+    for($j=0;$j<$len-$i-1;$j++){
+        if($li[$j]<$li[$j+1]){
+            $temp=$li[$j];
+            $li[$j]=$li[$j+1];
+            $li[$j+1]=$temp;
+        }
+    }
+}
+print_r($li);
+
+>?
+
+3.  Reverse the order of a list without using the predefined function
+li = [1,2,3,4,5,6,7,8,9,10]
+Answer :
+<?php
+
+
+$li=[1,2,3,4,5,6,7,8,9,10];
+$rev=[];
+$len=count($li);
+for($i=$len-1;$i>=0;$i--)
+{
+    $rev[]=$li[$i];
+}
+print_r($rev);
+
+?>
+4. Write a program to build the Fibonacci series.
+Fibonacci sequence is the integer sequence of 0, 1, 1, 2, 3, 5, 8....
+
+Answer:
+<?php
+
+function fibo($n){
+    if($n==0){
+        return 0;
+    } elseif($n==1){
+        return 1;
+    }else{
+        return fibo($n-1)+fibo($n-2);
+    }
+}
+$limit=10;
+for($i=0;$i<$limit;$i++){
+    echo fibo($i). " " ;
+}
+?>
+
+5. Write the Program to Compute LCM
+For example, the L.C.M. of 12 and 14 is 84.
